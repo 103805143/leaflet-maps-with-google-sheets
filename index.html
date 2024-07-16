@@ -7,9 +7,14 @@
   <link rel="icon" type="image/png" href="./favicon.png">
 
   <title>Loading the map...</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
-  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 
+  <!-- Routing Machine-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+	
   <!-- jQuery-->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
@@ -78,10 +83,13 @@
       tap: false
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
     
-    var X = require('leaflet');
-    require('leaflet-routing-machine');
 
-		var marker = X.marker([21.0779, 105.8021]).addTo(map);
+	  L.Routing.control({
+		  waypoints: [
+		    L.latLng(21.0779, 105.8021),
+		    L.latLng(21.0804, 105.7999)
+		  ]
+		}).addTo(map);
 
 
     
