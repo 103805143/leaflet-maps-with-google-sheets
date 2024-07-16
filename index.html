@@ -7,7 +7,9 @@
   <link rel="icon" type="image/png" href="./favicon.png">
 
   <title>Loading the map...</title>
-
+  <!-- Geocoder-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	
   <!-- Routing Machine-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 	
@@ -72,6 +74,7 @@
   <table id="maptable" class="display"></table>
 
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
   <script type="text/javascript">
     var map = L.map('map', {
       attributionControl: false,
@@ -85,7 +88,9 @@
 		  waypoints: [
 		    L.latLng(21.0779, 105.8021),
 		    L.latLng(21.0804, 105.7999)
-		  ]
+		  ], 
+		  routeWhileDragging: true,
+                  geocoder: L.Control.Geocoder.nominatim()
 		}).addTo(map);
 
 
