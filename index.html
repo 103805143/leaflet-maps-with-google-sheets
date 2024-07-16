@@ -81,6 +81,12 @@
     }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
     
 
+	  L.Routing.control({
+		  waypoints: [
+		    L.latLng(21.0779, 105.8021),
+		    L.latLng(21.0804, 105.7999)
+		  ]
+		}).addTo(map);
 
 
     
