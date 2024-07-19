@@ -677,7 +677,7 @@ $(window).on('load', function() {
     // Add waypoints
   	  L.Routing.control({
 		  waypoints: [
-		    L.latLng(21.0805, 105.7993),
+		    L.latLng(21.0856, 105.7988),
 		    L.latLng(21.0804, 105.7999)
 		  ], 
 		  routeWhileDragging: true,
