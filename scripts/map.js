@@ -669,7 +669,23 @@ $(window).on('load', function() {
         returnToPrevBounds: true,
         position: getSetting('_mapMyLocation')
       }).addTo(map);
+
+        var userLocation = null; // Initialize userLocation variable
+
+        locationManager.on('locationfound', function(e) {
+          userLocation = e.latlng;  // Store user's location upon retrieval
+        });
     }
+
+    // Add waypoints
+  	  L.Routing.control({
+		  waypoints: [
+		    userLocation,
+		    L.latLng(21.0784872348836, 105.80130961733403)
+		  ], 
+		  routeWhileDragging: true,
+                  geocoder: L.Control.Geocoder.nominatim()
+		}).addTo(map);
 
 
     // Add zoom control
