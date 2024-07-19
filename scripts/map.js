@@ -669,12 +669,6 @@ $(window).on('load', function() {
         returnToPrevBounds: true,
         position: getSetting('_mapMyLocation')
       }).addTo(map);
-
-        var userLocation = null; // Initialize userLocation variable
-
-        locationManager.on('locationfound', function(e) {
-          userLocation = e.latlng;  // Store user's location upon retrieval
-        });
     }
 
     // Add zoom control
