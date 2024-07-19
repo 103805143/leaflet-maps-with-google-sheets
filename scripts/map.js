@@ -673,18 +673,6 @@ $(window).on('load', function() {
     }
 
 
-
-    // Add waypoints
-  	  L.Routing.control({
-		  waypoints: [
-		    L.latLng(21.0856, 105.7988),
-		    L.latLng(21.0804, 105.7999)
-		  ], 
-		  routeWhileDragging: true,
-                  geocoder: L.Control.Geocoder.nominatim()
-		}).addTo(map);
-
-
     // Add zoom control
     if (getSetting('_mapZoom') !== 'off') {
       L.control.zoom({position: getSetting('_mapZoom')}).addTo(map);
