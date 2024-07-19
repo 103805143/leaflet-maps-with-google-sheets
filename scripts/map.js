@@ -670,6 +670,13 @@ $(window).on('load', function() {
       }).addTo(map);
     }
 
+    
+     // New: Access user location once obtained
+      locationManager.on('locationfound', function(e) {
+        var userLocation = e.latlng;  // This stores user's latitude and longitude
+      });
+    }
+
     // Add zoom control
     if (getSetting('_mapZoom') !== 'off') {
       L.control.zoom({position: getSetting('_mapZoom')}).addTo(map);
