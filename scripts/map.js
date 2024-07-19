@@ -672,18 +672,12 @@ $(window).on('load', function() {
       }).addTo(map);
     }
 
-    
-     // New: Access user location once obtained
-      locationManager.on('locationfound', function(e) {
-        var userLocation = e.latlng;  // This stores user's latitude and longitude
-      });
-    }
 
 
     // Add waypoints
   	  L.Routing.control({
 		  waypoints: [
-		    userLocation,
+		    locationControl,
 		    L.latLng(21.0804, 105.7999)
 		  ], 
 		  routeWhileDragging: true,
