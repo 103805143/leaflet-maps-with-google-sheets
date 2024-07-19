@@ -677,17 +677,6 @@ $(window).on('load', function() {
         });
     }
 
-    // Add waypoints
-  	  L.Routing.control({
-		  waypoints: [
-		    userLocation,
-		    L.latLng(21.0784872348836, 105.80130961733403)
-		  ], 
-		  routeWhileDragging: true,
-                  geocoder: L.Control.Geocoder.nominatim()
-		}).addTo(map);
-
-
     // Add zoom control
     if (getSetting('_mapZoom') !== 'off') {
       L.control.zoom({position: getSetting('_mapZoom')}).addTo(map);
